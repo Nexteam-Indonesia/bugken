@@ -16,9 +16,10 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->string('title');
-            $table->string('key');
+            $table->foreignIdFor(User::class)->nullable();
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
+            $table->string('key')->nullable();
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Project;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,7 +16,8 @@ class CreateExceptionsTable extends Migration
     {
         Schema::create('exceptions', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->json('log');
+            $table->foreignIdFor(Project::class)->nullable();
+            $table->json('log')->nullable();
             $table->timestamps();
         });
     }
