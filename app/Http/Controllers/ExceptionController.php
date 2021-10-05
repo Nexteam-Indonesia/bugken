@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ExceptionRequest;
 use App\Models\Exception;
+use App\Models\Project;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
@@ -25,9 +26,17 @@ class ExceptionController extends Controller
             ], 422);
         }
 
+        $project = Project::where('key', $key)->first();
+        if (empty($project)) {
+            return response()->json([
+                'message' => 'Project Key not found'
+            ], 422);
+        }
+
         try {
             $except = new Exception();
             $except->id = Str::uuid();
+            $except->project_id = $project->id;
             $except->log = json_encode($request->get('log'));
             $except->save();
 
