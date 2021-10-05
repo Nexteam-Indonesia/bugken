@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Bugken</title>
-{{--    {% block stylesfirst %}{% endblock %}--}}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-{{--    {% block styles %}{% endblock %}--}}
+    <link rel="stylesheet" href="{{ asset('vendors/iconly/bold.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/mazer.css') }}">
@@ -43,7 +42,8 @@
 </div>
 <script src="{{ asset('vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-{{--{% block js %}{% endblock %}--}}
+<script src="{{ asset('vendors/apexcharts/apexcharts.js') }}"></script>
+<script src="{{ asset('js/pages/dashboard.js') }}"></script>
 <script src="{{ asset('js/mazer.js') }}"></script>
 </body>
 
