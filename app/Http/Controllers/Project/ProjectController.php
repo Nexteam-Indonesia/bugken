@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Project;
 
+use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
@@ -30,10 +33,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $data = Project::query()
-            ->with('user')
-            ->get();
-        return view('dashbord');
+        $projects = Project::with('user')->get();
+        return view('project.index', compact('projects'));
     }
 
     /**
@@ -43,7 +44,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
+        return view('project.create', compact('users'));
     }
 
     /**
@@ -54,14 +56,19 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Project::query()
-            ->create([
-                'user_id' => Auth::user()->id,
-                'title'   => $request->title,
-                'project' => $request->project,
-                'key'     => $this->generateKey(),
-            ]);
-        return view('', compact($data));
+        Project::create([
+            'user_id'     => $request->user_id,
+            'title'       => $request->title,
+            'description' => $request->description,
+            'key'         => $this->generateKey(),
+        ]);
+//        DB::table('projects')->insert([
+//            'user_id'     => $request->user_id,
+//            'title'       => $request->title,
+//            'description' => $request->description,
+//            'key'         => $this->generateKey(),
+//        ]);
+        return redirect()->route('project.index');
     }
 
     /**
@@ -97,10 +104,10 @@ class ProjectController extends Controller
     {
         $data = Project::query()
             ->update([
-                'user_id' => Auth::user()->id,
-                'title'   => $request->title,
-                'project' => $request->project,
-                'key'     => $this->generateKey(),
+                'user_id'     => Auth::user()->id,
+                'title'       => $request->title,
+                'description' => $request->description,
+                'key'         => $this->generateKey(),
             ]);
         return view('');
     }

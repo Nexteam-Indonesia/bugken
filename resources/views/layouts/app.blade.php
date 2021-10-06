@@ -7,6 +7,8 @@
     <title>Dashboard - Bugken</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Include Choices CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/choices.js/choices.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/iconly/bold.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
@@ -18,7 +20,7 @@
 <body>
 <div id="app">
     <div id="sidebar" class="active">
-        @include('components.sidebar')
+        <x-sidebar/>
     </div>
     <div id="main">
         <header class="mb-3">
@@ -45,6 +47,10 @@
 <script src="{{ asset('vendors/apexcharts/apexcharts.js') }}"></script>
 <script src="{{ asset('js/pages/dashboard.js') }}"></script>
 <script src="{{ asset('js/mazer.js') }}"></script>
+<!-- Include Choices JavaScript -->
+<script src="{{ asset('vendors/choices.js/choices.min.js') }}"></script>
+<script src="{{ asset('js/pages/form-element-select.js') }}"></script>
+
 </body>
 
 </html>

@@ -14,7 +14,7 @@
             <li class="sidebar-title">Menu</li>
 
             <li
-                class="sidebar-item  ">
+                class="sidebar-item active">
                 <a href="index.html" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
@@ -22,19 +22,19 @@
             </li>
 
             <li
-                class="sidebar-item active has-sub">
+                class="sidebar-item has-sub">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-stack"></i>
                     <span>Components</span>
                 </a>
-                <ul class="submenu active">
+                <ul class="submenu">
                     <li class="submenu-item ">
-                        <a href="component-alert.html">Alert</a>
+                        <a href="{{ route('project.index') }}">Project</a>
                     </li>
                     <li class="submenu-item ">
                         <a href="component-badge.html">Badge</a>
                     </li>
-                    <li class="submenu-item active">
+                    <li class="submenu-item ">
                         <a href="component-breadcrumb.html">Breadcrumb</a>
                     </li>
                     <li class="submenu-item ">
