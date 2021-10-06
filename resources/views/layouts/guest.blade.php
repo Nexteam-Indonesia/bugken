@@ -31,7 +31,7 @@
         </div>
         <div class="col-lg-7 d-none d-lg-block">
             <div id="auth-right">
-
+                <img src="{{asset('/images/bug.jpg')}}" alt="" class="object-cover h-full">
             </div>
         </div>
     </div>
