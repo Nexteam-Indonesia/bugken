@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- Include Choices CSS -->
-    <link rel="stylesheet" href="{{ asset('vendors/choices.js/choices.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('vendors/choices.js/choices.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/iconly/bold.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
@@ -32,11 +32,14 @@
         <footer>
             <div class="footer clearfix mb-0 text-muted">
                 <div class="float-start">
-                    <p>2021 &copy; Mazer</p>
+                    <p>2021 &copy; Bugken</p>
                 </div>
                 <div class="float-end">
-                    <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                            href="http://ahmadsaugi.com">A. Saugi</a></p>
+                    <p>
+                        <a
+                            href="https://www.nexteam.id/">Nexteam Indonesia
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>
