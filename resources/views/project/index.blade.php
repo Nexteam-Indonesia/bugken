@@ -43,7 +43,7 @@
                 @endforeach
                 </tbody>
             </table>
-
+            {{ $projects->links() }}
         </section>
     </div>
 </x-app-layout>
