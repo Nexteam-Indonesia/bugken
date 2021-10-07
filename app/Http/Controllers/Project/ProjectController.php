@@ -77,9 +77,10 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Project $project)
     {
-        return view('project.detail');
+        $project->load('exceptions');
+        return view('project.detail', compact('project'));
     }
 
     /**

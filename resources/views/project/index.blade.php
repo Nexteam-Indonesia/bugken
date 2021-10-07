@@ -35,7 +35,7 @@
                         <td>{{ $project->description }}</td>
                         <td>{{ $project->created_at }}</td>
                         <td>
-                            <a href="{{url('/project/1')}}">
+                            <a href="{{url('/project/'.$project->id)}}">
                                 <i class="bi bi-arrow-up-right-square"></i>
                             </a>
                         </td>
