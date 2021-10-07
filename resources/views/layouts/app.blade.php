@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/mazer.css') }}">
     <link rel="shortcut icon" href="{{ asset('images/favicon.svg') }}" type="image/x-icon">
+    {{ $styles ?? '' }}
 </head>
 
 <body>
@@ -29,6 +30,7 @@
             </a>
         </header>
         {{ $slot }}
+        <div class="root"></div>
         <footer>
             <div class="footer clearfix mb-0 text-muted">
                 <div class="float-start">
@@ -53,7 +55,7 @@
 <!-- Include Choices JavaScript -->
 <script src="{{ asset('vendors/choices.js/choices.min.js') }}"></script>
 <script src="{{ asset('js/pages/form-element-select.js') }}"></script>
-
+{{ $scripts ?? '' }}
 </body>
 
 </html>
