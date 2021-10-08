@@ -34,7 +34,7 @@
                             <td>{{ $exception->created_at }}</td>
                             <td>{{ $exception->log }}</td>
                             <td>
-                                <a href="{{url('/project/'.$project->id)}}">
+                                <a href="{{url('/exception/'.$exception->id)}}">
                                     <i class="bi bi-arrow-up-right-square"></i>
                                 </a>
                             </td>
