@@ -3,7 +3,7 @@
         <div class="page-title mb-10">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h4 class="mb-4">Stack trace error message here brader</h4>
+                    <h4 class="mb-4">{{ $exception->title }}</h4>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -23,9 +23,7 @@
                 <div class="form-group">
                     <pre>
                         <code class="language-json" id="error_form">
-{
-   "message" : "test"
-}
+                            {{ $exception->log }}
                         </code>
                     </pre>
                 </div>

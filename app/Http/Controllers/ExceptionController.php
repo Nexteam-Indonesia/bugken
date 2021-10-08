@@ -55,5 +55,4 @@ class ExceptionController extends Controller
     {
         return response()->json([]);
     }
-
 }
