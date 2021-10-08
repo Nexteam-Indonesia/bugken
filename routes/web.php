@@ -25,3 +25,7 @@ Route::get('/', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('project', ProjectController::class);
+
+Route::get('exception/some_uuid', function (){
+   return view('exception.detail');
+});

@@ -17,6 +17,7 @@ class CreateExceptionsTable extends Migration
         Schema::create('exceptions', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignIdFor(Project::class)->nullable();
+            $table->string('title')->nullable();
             $table->json('log')->nullable();
             $table->timestamps();
         });
