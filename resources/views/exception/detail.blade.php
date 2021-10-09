@@ -22,9 +22,7 @@
             <form action="">
                 <div class="form-group">
                     <pre>
-                        <code class="language-json" id="error_form">
-                            {{ $exception->log }}
-                        </code>
+                        <code class="language-json" id="error_form">{{ json_encode(json_decode($exception->log), JSON_PRETTY_PRINT) }}</code>
                     </pre>
                 </div>
             </form>
@@ -40,6 +38,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
         <script>
             hljs.highlightAll();
+            let log_exception = document.getElementById('error_form')
+            console.log(log_exception.value)
         </script>
     </x-slot>
 </x-app-layout>
