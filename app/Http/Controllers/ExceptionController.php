@@ -37,7 +37,7 @@ class ExceptionController extends Controller
             $except = new Exception();
             $except->id = Str::uuid();
             $except->project_id = $project->id;
-            $except->title = $request->get('title');
+            $except->title = $request->get('message');
             $except->log = json_encode($request->get('log'));
             $except->save();
 
@@ -55,4 +55,9 @@ class ExceptionController extends Controller
     {
         return response()->json([]);
     }
+
+    public function show() {
+
+    }
+
 }

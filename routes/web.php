@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ExceptionController;
+use App\Http\Controllers\Admin\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +26,6 @@ Route::get('/', function () {
 require __DIR__.'/auth.php';
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('project', \App\Http\Controllers\Admin\ProjectController::class);
-    Route::get('exception/{exception}', [\App\Http\Controllers\Admin\ExceptionController::class, 'show'])->name('admin.exception.show');
+    Route::resource('project', ProjectController::class);
+    Route::get('exception/{exception}', [ExceptionController::class, 'show'])->name('admin.exception.show');
 });

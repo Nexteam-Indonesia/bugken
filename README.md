@@ -1,3 +1,7 @@
+# Bugken
+
+is a simple self-hosted error monitoring tool with laravel based.
+
 ### Json Error Payload
 
 ```json
