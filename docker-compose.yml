@@ -1,0 +1,24 @@
+version: "3"
+
+networks:
+    bugken:
+
+services:
+    bugken:
+        container_name: bugken
+        image: bugken:latest
+        networks:
+            - bugken
+        ports:
+            - 80:80
+    database:
+        container_name: database
+        hostname: db
+        image: yobasystems/alpine-mariadb:10
+        environment:
+            - MYSQL_USER=bugken
+            - MYSQL_DATABASE=bugken
+            - MYSQL_PASSWORD=password
+            - MYSQL_ROOT_PASSWORD=password2
+        networks:
+            - bugken
