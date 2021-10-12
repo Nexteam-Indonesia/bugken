@@ -49,7 +49,6 @@ WORKDIR /var/www/html
 RUN echo "Copy File"
 
 COPY ./server/nginx.conf /etc/nginx/nginx.conf
-COPY index.php /var/www/html/index.php
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 COPY .env.example /var/www/html/.env
 COPY . /var/www/html
